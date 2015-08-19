@@ -1,0 +1,34 @@
+front:
+  env_file:
+    - .env
+  build: front
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - front/config/vanilla.php:/var/www/conf/config.php
+    - front/uploads:/var/www/uploads
+    - front/logs/nginx:/var/log/nginx
+    - front/logs/php5-fpm:/var/log/php5-fpm
+  links:
+    - database:database
+    - cache:cache
+
+database:
+  env_file:
+    - .env
+  build: database
+  ports:
+    - "3306:3306"
+  volumes:
+    - database/data:/var/lib/mysql
+    - database/logs/mysql:/var/log/mysql
+
+cache:
+  env_file:
+    - .env
+  build: cache
+  ports:
+    - "11211:11211"
+  volumes:
+    - cache/logs/memcached:/var/log/memcached
