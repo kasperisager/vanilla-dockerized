@@ -6,7 +6,7 @@ front:
     - "80:80"
     - "443:443"
   volumes:
-    - ./front/config/vanilla.php:/var/www/conf/config.php/
+    - ./front/config/vanilla/:/var/www/conf/
     - ./front/uploads/:/var/www/uploads/
     - ./front/logs/nginx/:/var/log/nginx/
     - ./front/logs/php5-fpm/:/var/log/php5-fpm/
