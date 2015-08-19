@@ -61,12 +61,12 @@ COPY locales/* locales/
 ################################################################################
 
 # Expose writeable folders as volumes.
-VOLUME "/var/www/conf"
-VOLUME "/var/www/uploads"
+VOLUME "/var/www/conf/"
+VOLUME "/var/www/uploads/"
 
 # Expose logging volumes.
-VOLUME "/var/log/nginx"
-VOLUME "/var/log/php5-fpm"
+VOLUME "/var/log/nginx/"
+VOLUME "/var/log/php5-fpm/"
 
 ################################################################################
 # Entrypoint

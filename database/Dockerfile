@@ -22,7 +22,7 @@ COPY config/supervisor.conf /etc/supervisor/conf.d/
 ################################################################################
 
 # Expose logging volumes.
-VOLUME "/var/log/mysql"
+VOLUME "/var/log/mysql/"
 
 ################################################################################
 # Entrypoint
