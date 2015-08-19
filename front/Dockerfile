@@ -60,13 +60,8 @@ COPY locales/* locales/
 # Volumes
 ################################################################################
 
-# Espose the Vanilla config as a mountable volume.
-VOLUME "/var/www/conf/config.php"
-
-# Create an empty config file to prevent Docker from creating an empty folder.
-RUN touch conf/config.pgp
-
-# Expose the `uploads` folder as a mountable volume.
+# Expose writeable folders as volumes.
+VOLUME "/var/www/conf"
 VOLUME "/var/www/uploads"
 
 # Expose logging volumes.
