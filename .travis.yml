@@ -5,8 +5,9 @@ services:
 
 before_install:
   # Install Docker Compose.
-  - curl -L https://github.com/docker/compose/releases/download/VERSION_NUM/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-  - chmod +x /usr/local/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/VERSION_NUM/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin/
 
   # Create an .env file from the example.
   - cp .env.example .env
