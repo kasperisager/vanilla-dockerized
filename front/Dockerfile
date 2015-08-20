@@ -36,8 +36,14 @@ RUN apt-get install -y php5-fpm
 COPY config/php.ini /etc/php5/fpm/conf.d/
 COPY config/php5-fpm.conf /etc/php5/fpm/pool.d/
 
+# Ensure that PHP5 FPM is run as root.
+RUN sed -i "s/user = www-data/user = root/" /etc/php5/fpm/pool.d/www.conf
+RUN sed -i "s/group = www-data/group = root/" /etc/php5/fpm/pool.d/www.conf
+
 # Install PHP modules.
 RUN apt-get install -y \
+  php5-curl \
+  php5-gd \
   php5-memcached \
   php5-mysql
 

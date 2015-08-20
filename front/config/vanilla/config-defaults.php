@@ -4,7 +4,9 @@
 // This is the global application configuration file that sets up default
 // values for configuration settings.
 $Configuration = array();
+
 $Configuration['EnabledApplications']['Dashboard']             = 'dashboard';
+
 $Configuration['Database']['Engine']                           = 'MySQL';
 $Configuration['Database']['Host']                             = 'dbhost';
 $Configuration['Database']['Name']                             = 'dbname';
@@ -18,9 +20,11 @@ $Configuration['Database']['ConnectionOptions']                = array(
 $Configuration['Database']['CharacterEncoding']                = 'utf8';
 $Configuration['Database']['DatabasePrefix']                    = 'GDN_';
 $Configuration['Database']['ExtendedProperties']['Collate']     = 'utf8_unicode_ci';
+
 $Configuration['Cache']['Enabled']                              = TRUE;
 $Configuration['Cache']['Method']                               = 'dirtycache';
 $Configuration['Cache']['Filecache']['Store']                   = PATH_CACHE.'/Filecache';
+
 $Configuration['Garden']['ContentType']                         = 'text/html';
 $Configuration['Garden']['Charset']                             = 'utf-8';
 // An array of folders the application should never search through when searching for classes. (note: plugins had to be removed so that locale searches could get the locale folder from the plugin's folder).
@@ -108,12 +112,15 @@ $Configuration['Garden']['Embed']['CommentsPerPage']            = 50;
 $Configuration['Garden']['Embed']['SortComments']               = 'desc';
 $Configuration['Garden']['Embed']['PageToForum']                = TRUE;
 $Configuration['Garden']['BannedPhoto']                         = 'https://cd8ba0b44a15c10065fd-24461f391e20b7336331d5789078af53.ssl.cf1.rackcdn.com/images/banned_large.png';
+
+
 // Formatting
 $Configuration['Garden']['Format']['Mentions']                  = TRUE;
 $Configuration['Garden']['Format']['Hashtags']                  = TRUE;
 $Configuration['Garden']['Format']['YouTube']                   = TRUE;
 $Configuration['Garden']['Format']['Vimeo']                     = TRUE;
 $Configuration['Garden']['Format']['EmbedSize']                 = 'normal'; // tiny/small/normal/big/huge or WIDTHxHEIGHT
+
 // Default Preferences
 $Configuration['Preferences']['Email']['ConversationMessage']   = '1';
 $Configuration['Preferences']['Email']['BookmarkComment']       = '1';
@@ -129,6 +136,7 @@ $Configuration['Preferences']['Popup']['WallComment']           = '1';
 $Configuration['Preferences']['Popup']['ActivityComment']       = '1';
 $Configuration['Preferences']['Popup']['DiscussionComment']     = '1';
 $Configuration['Preferences']['Popup']['Mention']               = '1';
+
 // Modules
 $Configuration['Modules']['Dashboard']['Panel'] = array('MeModule', 'UserBoxModule', 'ActivityFilterModule', 'UserPhotoModule', 'ProfileFilterModule', 'SideMenuModule', 'UserInfoModule', 'GuestModule', 'Ads');
 $Configuration['Modules']['Dashboard']['Content'] = array('MessageModule', 'MeModule', 'UserBoxModule', 'ProfileOptionsModule', 'Notices', 'ActivityFilterModule', 'ProfileFilterModule', 'Content', 'Ads');
@@ -136,6 +144,7 @@ $Configuration['Modules']['Vanilla']['Panel'] = array('MeModule', 'UserBoxModule
 $Configuration['Modules']['Vanilla']['Content'] = array('MessageModule', 'MeModule', 'UserBoxModule', 'NewDiscussionModule', 'ProfileOptionsModule', 'Notices', 'NewConversationModule', 'NewDiscussionModule', 'DiscussionFilterModule', 'CategoryModeratorsModule', 'Content', 'Ads');
 $Configuration['Modules']['Conversations']['Panel'] = array('MeModule', 'UserBoxModule', 'NewConversationModule', 'SignedInModule', 'GuestModule', 'Ads');
 $Configuration['Modules']['Conversations']['Content'] = array('MessageModule', 'MeModule', 'UserBoxModule', 'NewConversationModule', 'Notices', 'Content', 'Ads');
+
 // Routes
 $Configuration['Routes']['DefaultController'] = 'discussions';
 $Configuration['Routes']['DefaultForumRoot'] = 'discussions';
