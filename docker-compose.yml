@@ -19,7 +19,7 @@ database:
     - ./.env
   build: database
   ports:
-    - "3306:3306"
+    - "127.0.0.1:3306:3306"
   volumes:
     - ./database/data/:/var/lib/mysql/
     - ./database/logs/mysql/:/var/log/mysql/
@@ -29,6 +29,6 @@ cache:
     - ./.env
   build: cache
   ports:
-    - "11211:11211"
+    - "127.0.0.1:11211:11211"
   volumes:
     - ./cache/logs/memcached/:/var/log/memcached/
