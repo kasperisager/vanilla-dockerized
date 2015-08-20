@@ -1,6 +1,6 @@
 # Vanilla Dockerized
 
-> A Dockerized Vanilla Forums setup ready for take-off.
+> A Dockerized single-node Vanilla Forums setup ready for take-off.
 
 [![Travis](https://img.shields.io/travis/kasperisager/vanilla-dockerized.svg)](https://travis-ci.org/kasperisager/vanilla-dockerized)
 
