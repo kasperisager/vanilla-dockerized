@@ -35,9 +35,17 @@ docker-comopse up
 
 Since the `VANILLA_VERSION` variable is used at runtime rather that build time it must be set in the `Dockerfile` and not `.env`.
 
+## Addons
+
+Addons in the [`applications`](applcations), [`locales`](locales), [`plugins`](plugins), and [`themes`](themes) directories will be copied to the `front` container when building. Follow the steps described in [_Upgrading_](#upgrading) when adding new addons to make sure that they're copied to the container.
+
 ## Security
 
 While most processes with the exception of memcached are run as `root` to circumvent permission issues, only ports `80` and `443` are publicly exposed. This means that the database and cache containers can only be accessed from within the host machine as well as linked containers but not from the outside.
+
+## Mail
+
+The setup does not include a built-in mail server as this is better left to dedicated providers. A dedicated SMTP server is therefore required for mail in Vanilla to function properly. [SendGrid](https://sendgrid.com) has a free plan that should be suitable for smaller installations; they also provide larger plans as needed.
 
 ## License
 
