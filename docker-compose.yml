@@ -1,4 +1,5 @@
 front:
+  restart: always
   env_file:
     - ./.env
   build: front
@@ -15,6 +16,7 @@ front:
     - cache:cache
 
 database:
+  restart: always
   env_file:
     - ./.env
   build: database
@@ -25,6 +27,7 @@ database:
     - ./database/logs/mysql/:/var/log/mysql/
 
 cache:
+  restart: always
   env_file:
     - ./.env
   build: cache
