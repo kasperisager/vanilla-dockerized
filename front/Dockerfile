@@ -11,6 +11,9 @@ FROM nginx:1.9
 ENV VANILLA_VERSION 2.1.11
 ENV VANILLA_URL https://github.com/vanilla/vanilla.git
 
+# Set noninteractive mode for apt-get.
+ENV DEBIAN_FRONTEND noninteractive
+
 ################################################################################
 # Build instructions
 ################################################################################
