@@ -40,10 +40,8 @@ COPY config/php5-fpm.conf /etc/php5/fpm/pool.d/
 RUN sed -i "s/user = www-data/user = root/" /etc/php5/fpm/pool.d/www.conf
 RUN sed -i "s/group = www-data/group = root/" /etc/php5/fpm/pool.d/www.conf
 
-# Install required packages and PHP modules.
+# Install PHP modules.
 RUN apt-get install -y \
-  mailutils \
-  postfix \
   php5-curl \
   php5-gd \
   php5-memcached \
