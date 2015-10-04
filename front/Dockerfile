@@ -57,10 +57,10 @@ RUN chmod 777 conf
 RUN chmod 777 cache
 
 # Copy applications, plugins, themes, and locales to Vanilla.
-COPY applications/* applications/
-COPY plugins/* plugins/
-COPY themes/* themes/
-COPY locales/* locales/
+COPY applications/ applications/
+COPY plugins/ plugins/
+COPY themes/ themes/
+COPY locales/ locales/
 
 ################################################################################
 # Volumes
