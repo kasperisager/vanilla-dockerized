@@ -8,7 +8,7 @@ FROM nginx:1.9
 # Environment variables
 ################################################################################
 
-ENV VANILLA_VERSION 2.1.11
+ENV VANILLA_VERSION 2.1.12
 ENV VANILLA_URL https://github.com/vanilla/vanilla.git
 
 ################################################################################
