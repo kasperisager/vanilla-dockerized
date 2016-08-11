@@ -14,7 +14,7 @@
 
 To configure the environment variables of the different containers copy [`.env.example`](.env.example) to `.env` and adjust to your needs.
 
-The initial Vanilla configuration is performed when first installing Vanilla after booting up the different containers. Prior to running the installation you must however copy [`config.example.php`](front/config/vanilla/config.example.php) to `config.php` in the [`front/vanilla/config`](front/vanilla/config) directory to include some initial configuration required for the setup to function properly.
+The initial Vanilla configuration is performed when first installing Vanilla after booting up the different containers. Prior to running the installation you must however copy [`config.example.php`](front/config/vanilla/config.example.php) to `config.php` in the [`front/config/vanilla`](front/config/vanilla) directory to include some initial configuration required for the setup to function properly.
 
 ## Running
 
