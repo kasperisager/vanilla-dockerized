@@ -7,12 +7,13 @@ before_install:
   # Update Docker Engine
   - sudo apt-get update
   - sudo apt-get install docker-engine
-  # Install Docker Compose.
+
+  # Install Docker Compose
   - curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-  # Create an .env file from the example.
+  # Create an .env file from the example
   - cp .env.example .env
 
 script:
