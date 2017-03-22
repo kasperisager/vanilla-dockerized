@@ -1,37 +1,43 @@
-front:
-  restart: always
-  env_file:
-    - ./.env
-  build: front
-  ports:
-    - "80:80"
-    - "443:443"
-  volumes:
-    - ./front/config/vanilla/:/var/www/conf/
-    - ./front/uploads/:/var/www/uploads/
-    - ./front/logs/nginx/:/var/log/nginx/
-    - ./front/logs/php5-fpm/:/var/log/php5-fpm/
-  links:
-    - database:database
-    - cache:cache
+version: '3'
+services:
+  front:
+    restart: always
+    env_file:
+      - ./.env
+    build:
+      context: front
+      args:
+        VANILLA_VERSION: ${VANILLA_VERSION:-2.1.12}
+        VANILLA_URL: ${VANILLA_URL:-https://github.com/vanilla/vanilla.git}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./front/config/vanilla/:/var/www/conf/
+      - ./front/uploads/:/var/www/uploads/
+      - ./front/logs/nginx/:/var/log/nginx/
+      - ./front/logs/php5-fpm/:/var/log/php5-fpm/
+    links:
+      - database:database
+      - cache:cache
 
-database:
-  restart: always
-  env_file:
-    - ./.env
-  build: database
-  ports:
-    - "127.0.0.1:3306:3306"
-  volumes:
-    - ./database/data/:/var/lib/mysql/
-    - ./database/logs/mysql/:/var/log/mysql/
+  database:
+    restart: always
+    env_file:
+      - ./.env
+    build: database
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - ./database/data/:/var/lib/mysql/
+      - ./database/logs/mysql/:/var/log/mysql/
 
-cache:
-  restart: always
-  env_file:
-    - ./.env
-  build: cache
-  ports:
-    - "127.0.0.1:11211:11211"
-  volumes:
-    - ./cache/logs/memcached/:/var/log/memcached/
+  cache:
+    restart: always
+    env_file:
+      - ./.env
+    build: cache
+    ports:
+      - "127.0.0.1:11211:11211"
+    volumes:
+      - ./cache/logs/memcached/:/var/log/memcached/

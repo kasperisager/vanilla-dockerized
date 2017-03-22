@@ -8,8 +8,8 @@ FROM nginx:1.9
 # Environment variables
 ################################################################################
 
-ENV VANILLA_VERSION 2.1.12
-ENV VANILLA_URL https://github.com/vanilla/vanilla.git
+ARG VANILLA_VERSION
+ARG VANILLA_URL
 
 ################################################################################
 # Build instructions
